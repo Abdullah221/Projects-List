@@ -22,6 +22,7 @@ function scoreChecker(messageA) {
     Score = 0;
     message.textContent = "You Lost the game";
     score.textContent = `Score : ${Score}`;
+    btn.classList.add("disable");
   }
 }
 btn.addEventListener("click", function () {
@@ -44,4 +45,5 @@ resetBtn.addEventListener("click", function () {
   message.textContent = "Start game...";
   number.textContent = "?";
   body.style.backgroundColor = "#212121";
+  btn.classList.remove("disable");
 });
