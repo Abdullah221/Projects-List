@@ -6,12 +6,24 @@ const message = document.querySelector(".message");
 const btn = document.querySelector(".check");
 const number = document.querySelector(".number");
 const resetBtn = document.querySelector(".reset");
+const body = document.querySelector("body");
 
 // Game Variables
 let Score = 20;
 let HighScore = 0;
 let CNumber = Math.trunc(Math.random() * 20 + 1);
 
+function scoreChecker(messageA) {
+  if (Score > 1) {
+    message.textContent = `Your Number is ${messageA}`;
+    Score--;
+    score.textContent = `Score : ${Score}`;
+  } else {
+    Score = 0;
+    message.textContent = "You Lost the game";
+    score.textContent = `Score : ${Score}`;
+  }
+}
 btn.addEventListener("click", function () {
   if (Number(guess.value) === CNumber) {
     message.textContent = "Correct";
@@ -19,15 +31,11 @@ btn.addEventListener("click", function () {
     HighScore = HighScore < 10 ? `0${HighScore}` : HighScore;
     hScore.textContent = `High Score : ${HighScore}`;
     number.textContent = CNumber;
+    body.style.backgroundColor = "#8f8";
   } else if (Number(guess.value) > CNumber) {
-    message.textContent = "Your Number is too high!";
-    Score--;
-    Score = Score < 10 ? `0${Score}` : Score;
-    score.textContent = `Score : ${Score}`;
+    scoreChecker("too high!");
   } else if (Number(guess.value) < CNumber) {
-    message.textContent = "Your Number is too low!";
-    Score--;
-    score.textContent = `Score : ${Score}`;
+    scoreChecker("too low!");
   }
 });
 resetBtn.addEventListener("click", function () {
@@ -35,4 +43,5 @@ resetBtn.addEventListener("click", function () {
   score.textContent = `Score : ${Score}`;
   message.textContent = "Start game...";
   number.textContent = "?";
+  body.style.backgroundColor = "#212121";
 });
