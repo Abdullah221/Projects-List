@@ -45,5 +45,6 @@ resetBtn.addEventListener("click", function () {
   message.textContent = "Start game...";
   number.textContent = "?";
   body.style.backgroundColor = "#212121";
+  CNumber = Math.trunc(Math.random() * 20 + 1);
   btn.classList.remove("disable");
 });
