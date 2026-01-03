@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pig Game</title>
+    <link rel="stylesheet" href="css/pigGame.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="player player-1">
+        <h2 id="playerName-1" class="playerName">Player 1 Name</h2>
+        <p class="playerScore-1 player-score">Score</p>
+        <article class="currentScore">
+          <p>Current Score</p>
+          <p class="current-score c-score-1">0</p>
+        </article>
+      </section>
+      <section class="player player-2">
+        <h2 id="playerName-2" class="playerName">Player 1 Name</h2>
+        <p class="playerScore-2 player-score">Score</p>
+        <article class="currentScore">
+          <p>Current Score</p>
+          <p class="current-score c-score-2">0</p>
+        </article>
+      </section>
+      <img
+        src="assets/Dice-1.png"
+        alt=""
+        class="dice hide"
+        width="50px"
+        height="50px"
+      />
+      <button class="button newGame" onclick="newGame()">New Game</button>
+      <button class="button rollDice" onclick="rollDice()">Roll Dice</button>
+      <button class="button holdScore" onclick="holdNumber()">
+        Hold Score
+      </button>
+    </main>
+    <button onclick="darkMode()" id="modeButton">
+      <i class="fa-solid fa-sun"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script
+      src="https://kit.fontawesome.com/2be14bd63e.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/pigGame.js"></script>
+  </body>
+</html>
